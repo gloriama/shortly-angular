@@ -15,14 +15,21 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/signout', {
+      templateUrl: 'app/auth/signout.html',
+      controller: 'AuthController'
+    })
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
+      //access: { requiresLogin: true }
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-    });
+      //access: { requiresLogin: true }
+    })
+    .otherwise('/links'); //might not work? can remove for now
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
