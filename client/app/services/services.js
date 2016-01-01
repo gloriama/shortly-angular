@@ -19,7 +19,6 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      //console.log(resp.data);
       return resp; //give back raw response
     });
   };
