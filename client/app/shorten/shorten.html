@@ -5,4 +5,10 @@
     <li><a ng-click='signout()' href='' class='signout'>Signout</a></li>
   </ul>
 </div>
-<div id='container'></div>
+<div id='container'>
+  <form name="linkForm">
+  	<input type="url" name="input" ng-model='linkUrl' ng-pattern="/^https?://.*(\..*)+\..+$/" required />
+  	<button ng-click='addLink(linkUrl)' ng-disabled="linkForm.input.$error.pattern || linkForm.input.$error.required">Submit</button>
+  </form>
+  <span class="error" ng-show="linkForm.input.$error.pattern">Not valid url!</span>
+</div>

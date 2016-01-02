@@ -6,7 +6,21 @@
     <!-- <li><a href='#/signout' class='signout'>Signout</a></li> -->
   </ul>
 </div>
-<div id='container'></div>
+<div id='container'>
+  <ul>
+    <li ng-repeat="link in data.links">
+      <img src='/assets/redirect_icon.png' />
+      <div class="info">
+        <div class="visits"><span class="count">{{ link.visits }}</span> Visits</div>
+        <div class="title">{{ link.title }}</div>
+        <div class="original">{{ link.url }}</div>
+        <a href="{{ link.base_url }}/{{ link.code }}">
+          {{ link.base_url }}/{{ link.code }}
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
 
 <!-- original boilerplate: -->
 <!-- <div id='container'> -->
