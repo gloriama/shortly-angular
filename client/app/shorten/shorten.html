@@ -11,4 +11,16 @@
   	<button ng-click='addLink(linkUrl)' ng-disabled="linkForm.input.$error.pattern || linkForm.input.$error.required">Submit</button>
   </form>
   <span class="error" ng-show="linkForm.input.$error.pattern">Not valid url!</span>
+  <span class="error" ng-show="response.data === '400: Not a valid request'">Not valid url! (from server)</span>
+
+  <div class="link" ng-show=" response.data.title">
+    <img src='/assets/redirect_icon.png'/>
+    <div class="info">
+      <div class="title">{{ response.data.title }}</div>
+      <div class="original">{{ response.data.url }}</div>
+      <a href="{{ response.data.base_url }}/{{ response.data.code }}">
+        {{ response.data.base_url }}/{{ response.data.code }}
+      </a>
+    </div>
+  </div>
 </div>

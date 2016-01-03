@@ -9,6 +9,7 @@ angular.module('shortly.shorten', [])
       Links.addOne({url: link})
       .then(function (resp) { //for whatever reason, we only get here if the response is status 200
         console.log("response to POST to /api/links:", resp);
+        $scope.response = resp;
       });
     //otherwise:
       //print some kind of error to user

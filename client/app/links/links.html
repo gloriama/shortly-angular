@@ -7,9 +7,9 @@
   </ul>
 </div>
 <div id='container'>
-  <input ng-model='searchTerm' placeholder='filter'/>
-  <ul>
-    <li ng-repeat="link in data.links | orderBy:'-visits' | filter: searchTerm">
+  <input class="searchbar" ng-model='searchTerm' placeholder='filter'/>
+  <ul class="links">
+    <li class="link" ng-repeat="link in data.links | orderBy:'-visits' | filter: searchTerm">
       <img src='/assets/redirect_icon.png' />
       <div class="info">
         <div class="visits"><span class="count">{{ link.visits }}</span> Visits</div>
